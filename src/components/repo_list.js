@@ -2,7 +2,7 @@ import React from 'react';
 import RepoListItem from './repo_list_item';
 
 const RepoList = (props) => {
-  const repositoryItems = props.data.map((repository) => {
+  const repositoryItems = props.repositories.map((repository) => {
     return <RepoListItem repository={repository} />
   });
 

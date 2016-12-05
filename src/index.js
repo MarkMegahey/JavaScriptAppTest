@@ -14,11 +14,11 @@ class App extends Component {
 
 
     Axios.get(url)
-    .then((response) => {
-      console.log(response.data);
+    .then((repositories) => {
+      console.log(repositories.data);
     })
-    .then((response) => {
-      this.setState({response.data});
+    .then((repositories) => {
+      this.setState({repositories});
     })
     .catch((error) => {
       console.log(error);
@@ -33,7 +33,7 @@ class App extends Component {
     }
     return (
       <div>
-        <RepoList repositories={this.state.data} />
+        <RepoList repositories={this.state.repositories} />
       </div>
     );
   }
