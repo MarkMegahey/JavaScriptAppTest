@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom'
 import Axios from 'axios'
 import RepoList from './components/repo_list'
 
-const url = 'https://api.github.com/repositories?since=364&r=json'
+const url = 'https://api.github.com/repositories?since=364'
 
 class App extends Component {
   constructor(props) {
