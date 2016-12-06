@@ -10,7 +10,7 @@ class App extends Component {
   constructor(props) {
     super(props);
 
-    this.state = { repositories: [] };
+    this.state = { repositories: null };
   }
 
   componentWillMount(){
@@ -31,7 +31,7 @@ class App extends Component {
 
   render() {
     if(this.state === null || this.state.repositories.length === 0){
-      return null
+      <p>loading</p>
     }
     return (
       <div>
