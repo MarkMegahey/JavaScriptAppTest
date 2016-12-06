@@ -1,7 +1,7 @@
-import React from 'react';
+import React from 'react'
 
 const RepoListItem = (props) => {
-  return <li> {repository.full_name} </li>
-};
+  return <li> {props.repository.full_name} </li>
+}
 
-export default RepoListItem;
+export default RepoListItem
