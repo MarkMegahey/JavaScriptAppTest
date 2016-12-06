@@ -3,22 +3,25 @@ import ReactDOM from 'react-dom';
 import Axios from 'axios';
 import RepoList from './components/repo_list'
 
-const url = 'https://api.github.com/repositories?since=364'
+const url = 'https://api.github.com/repositories?since=364&r=json'
 
 
 class App extends Component {
   constructor(props) {
     super(props);
 
-    this.state = { repositories: null };
+    this.state = { repositories: [] };
+  }
 
-
-    Axios.get(url)
-    .then((repositories) => {
-      console.log(repositories.data);
+  componentWillMount(){
+   Axios.get(url)
+    .then((response) => {
+      console.log(response.data);
     })
-    .then((repositories) => {
-      this.setState({repositories});
+    .then((response) => {
+      this.setState({
+        repositories: response.data
+      });
     })
     .catch((error) => {
       console.log(error);
@@ -26,9 +29,8 @@ class App extends Component {
   }
 
 
-
   render() {
-    if(this.state === null || this.state.list.length === 0){
+    if(this.state === null || this.state.repositories.length === 0){
       return null
     }
     return (
