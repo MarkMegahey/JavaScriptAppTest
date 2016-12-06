@@ -13,7 +13,7 @@ class App extends Component {
     this.state = { repositories: null };
   }
 
-  componentWillMount(){
+  componentDidMount(){
    Axios.get(url)
     .then((response) => {
       console.log(response.data);
@@ -30,8 +30,8 @@ class App extends Component {
 
 
   render() {
-    if(this.state === null || this.state.repositories.length === 0){
-      <p>loading</p>
+    if(this.state.repositories === null){
+      return <p>loading</p>
     }
     return (
       <div>
