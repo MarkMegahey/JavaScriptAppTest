@@ -1,9 +1,11 @@
 import React, { Component } from 'react'
 import ReactDOM from 'react-dom'
 import Axios from 'axios'
+import SearchBar from './components/search_bar'
 import RepoList from './components/repo_list'
 
-const url = 'https://api.github.com/repositories?since=364'
+
+const url = 'https://api.github.com/repositories'
 
 class App extends Component {
   constructor(props) {
@@ -35,9 +37,17 @@ class App extends Component {
     }
 
     return (
-      <div>
-        <RepoList repositories={this.state.repositories} />
-      </div>
+      // <div className="modal-content">
+      //   <div className="modal-header">
+      //     <h4 className="modal-title">Public Git Repositories</h4>
+      //   </div>
+      //   <div className="modal-body">
+          <div>
+            <SearchBar />
+            <RepoList repositories={this.state.repositories} />
+          </div>
+      //   </div>
+      // </div>
     )
   }
 }

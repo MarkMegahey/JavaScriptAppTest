@@ -1,9 +1,13 @@
 import React from 'react'
 import RepoListItem from './repo_list_item'
 
+
 const RepoList = (props) => {
   let counter = 0
-  const repositoryItems = props.repositories.map((repository) => {
+  const result = probs.repositories.filter((repository) => ) {
+    repository.name === //SearchBar Input
+  }
+  const repositoryItems =  result.map((repository) => { //result mapped to the repositoryItems 
     counter++
     return <RepoListItem key={counter} repository={repository} />
   })
