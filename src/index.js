@@ -1,8 +1,9 @@
+//Npm Installed
 import React, { Component } from 'react'
 import ReactDOM from 'react-dom'
-import Axios from 'axios'
+// Created Containers/Conponents/Reducers
 import SearchBar from './components/search_bar'
-import RepoList from '../containers/repo_list'
+
 
 export default class App extends Component {
   constructor(props) {

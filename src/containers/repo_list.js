@@ -1,5 +1,7 @@
+//Npm Installed
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+// Created Containers/Conponents/Reducers
 import RepoListItem from './repo_list_item'
 
 class RepoList extends Component {
