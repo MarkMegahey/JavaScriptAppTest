@@ -3,7 +3,7 @@ import React, {Component} from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 //Created Containers/Conponents/Reducers
-import { fetchRepositories } from '../actions/fetch_action'
+import { searchRepositories } from '../actions/search_action'
 
 
 class SearchBar extends Component {
@@ -13,6 +13,7 @@ class SearchBar extends Component {
     this.state = { term: '' }
 
     this.onInputChange = this.onInputChange.bind(this)
+    this.onFormSubmit = this.onFormSubmit.bind(this)
   }
 
   onInputChange(event) {
@@ -25,6 +26,8 @@ class SearchBar extends Component {
 
     // when user submits search github data
     //`https://api.github.com/search/repositories?q=${name}&order=desc`
+    this.props.searchRepositories(this.state.term)
+    this.setState({ term: '' })
   }
 
   render()  {
@@ -44,4 +47,8 @@ class SearchBar extends Component {
   }
 }
 
-export default SearchBar
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators({ searchRepositories }, dispatch)
+}
+
+export default connect(null, mapDispatchToProps)(SearchBar)

@@ -1,3 +1,4 @@
+import axios from 'axios'
 //url for public repositories
 const PUBLIC_URL = `https://api.github.com/repositories`
 
