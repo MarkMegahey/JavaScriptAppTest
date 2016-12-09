@@ -4,6 +4,7 @@ import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 // Created Containers/Conponents/Reducers
 import { fetchRepositories } from '../actions/fetch_action'
+import RepoListItem from '../components/repo_list_item'
 
 class RepoList extends Component {
   constructor(props) {
@@ -20,28 +21,23 @@ class RepoList extends Component {
     this.props.fetchRepositories(this.state.term)
   }
 
-  renderRepo(repoData) {
-    return(
-        <li
-          key={repoData.name}
-          className="list-group-item">
-          {repoData.name}
-        </li>
-    )
-  }
+
 
   render() {
-
-
     return (
       <div>
         <ul className="list-group">
-          {this.props.publicrepo.map(this.renderRepo)}
+        {this.props.publicrepo.map((repository) => {
+          return (
+            <RepoListItem repository={repository} />
+          )
+        })}
         </ul>
       </div>
     )
   }
 }
+
 
 function mapStateToProps({ publicrepo }) {
   return { publicrepo }
