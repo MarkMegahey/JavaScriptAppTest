@@ -22,19 +22,23 @@ class RepoList extends Component {
 
   renderRepo(repoData) {
     return(
-      <li
-        key={repoData.name}
-        className="list-group-item">
-        {repoData.name}
-      </li>
+        <li
+          key={repoData.name}
+          className="list-group-item">
+          {repoData.name}
+        </li>
     )
   }
 
   render() {
+    if(this.state.term === null){
+      return <p>loading</p>
+    }
+
     return (
       <div>
         <ul className="list-group">
-          {this.props.publicrepo.map(this.renderRepo)}
+          {this.props.publicrepo.data.map(this.renderRepo)}
         </ul>
       </div>
     )
