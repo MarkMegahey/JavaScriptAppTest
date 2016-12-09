@@ -10,6 +10,12 @@ class RepoList extends Component {
     super(props)
 
     this.state = { term: '' }
+
+    this.fetchData = this.fetchData.bind(this)
+  }
+
+  fetchData(event){
+    this.props.fetchRepositories(this.state.term)
   }
 
   render() {
