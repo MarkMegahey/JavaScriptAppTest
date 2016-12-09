@@ -1,31 +1,28 @@
 //Npm Installed
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import { bindActionCreators } from 'redux'
 // Created Containers/Conponents/Reducers
-import RepoListItem from './repo_list_item'
+import fetchRepositories from '../actions/fetch_action'
 
 class RepoList extends Component {
+  constructor(props) {
+    super(props)
 
-  repositoryList() {
-    let counter = 0
-    return this.props.repositories.map((repository) => {
-      counter++
-      return <RepoListItem key={counter} repository={repository} />
-    })
+    this.state = { term: '' }
   }
 
   render() {
     return (
-      <ul className="col-md-12 list-group">
-      {repositoryList}
-      </ul>
+      <div>
+        RepoList
+      </div>
     )
   }
-
-  mapStateToProps(state) {
-  // whatever returns from here shows as props in RepoList
-    return {
-      repositories: state.repositories
-    }
-  }
 }
+
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators({ fetchRepositories }, dispatch)
+}
+
+export default connect(null, mapDispatchToProps)(RepoList)
