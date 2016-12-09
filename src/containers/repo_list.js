@@ -4,7 +4,7 @@ import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 // Created Containers/Conponents/Reducers
 import { fetchRepositories } from '../actions/fetch_action'
-import RepoListItem from '../components/repo_list_item'
+import RepoListItem from './repo_list_item'
 
 class RepoList extends Component {
   constructor(props) {
@@ -28,8 +28,10 @@ class RepoList extends Component {
       <div>
         <ul className="list-group">
         {this.props.publicrepo.map((repository) => {
+          let counter = 0
+          counter++
           return (
-            <RepoListItem repository={repository} />
+            <RepoListItem key={counter} repository={repository} />
           )
         })}
         </ul>
