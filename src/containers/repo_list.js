@@ -29,5 +29,3 @@ class RepoList extends Component {
     }
   }
 }
-
-export default connect(mapStateToProps)(RepoList);
