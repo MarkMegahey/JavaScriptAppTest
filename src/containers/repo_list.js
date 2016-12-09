@@ -38,7 +38,7 @@ class RepoList extends Component {
     return (
       <div>
         <ul className="list-group">
-          {this.props.publicrepo.data.map(this.renderRepo)}
+          {this.props.publicrepo.map(this.renderRepo)}
         </ul>
       </div>
     )
