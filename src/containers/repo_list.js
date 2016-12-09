@@ -31,9 +31,7 @@ class RepoList extends Component {
   }
 
   render() {
-    if(this.state.term === null){
-      return <p>loading</p>
-    }
+
 
     return (
       <div>
