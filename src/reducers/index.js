@@ -1,10 +1,10 @@
 //Npm Installed
 import { combineReducers } from 'redux'
 // Created Containers/Conponents/Reducers
-import PublicRepoReducer from './reducer_publicrepo'
+import SearchRepoReducer from './reducer_searchrepo'
 
 const rootReducer = combineReducers({
-  publicrepo: PublicRepoReducer
+  searchrepo: SearchRepoReducer
 });
 
 export default rootReducer;
